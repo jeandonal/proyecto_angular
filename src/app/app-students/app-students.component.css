@@ -1,4 +1,9 @@
 .container {
     background-color: rgb(240, 240, 240);
-    height: 500px;
+    height: auto;
+}
+
+div {
+    padding-top: 3%;
+    padding-left: 3%;
 }

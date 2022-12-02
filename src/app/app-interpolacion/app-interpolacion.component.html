@@ -1,0 +1,89 @@
+<p>Seccion Interpolacion</p>
+
+<!--ngClass es = "que si nombre tiene algo (?) entonces asigne la clase 'claselejemplo' sino : no agregue nada (' ')" -->
+<div [ngClass]="nombre ? 'clase-ejemplo' : ' '" [style.font-size]="nombre ? '80px' : '20px'">
+    {{nombre ? nombre : 'Vacio'}}
+</div>
+<br>
+<div appDirectivaJona1>
+    Directiva Creada <br> Mi primera directiva
+</div>
+<br>
+<div>Directiva NG FOR
+    <ul>
+        <li *ngFor="let nombrePersona of personas">
+            Nombre: {{nombrePersona}}
+        </li>
+    </ul>
+
+</div>
+<br>
+<button (click)="nombre = 'texo ejemplo'">Asignar Texto</button>
+<button (click)="nombre = 'texo ejemplo'" [style.font-size]="'20px'">Eliminar Texto</button>
+
+<br>
+<br>
+<div>
+    NG IF
+</div>
+<div *ngIf="bandera">
+    La bandera esta Activada
+</div>
+<br>
+<br>
+<button (click)="bandera=true">Encender Bandera</button>
+<button (click)="bandera=false">Apagar Bandera</button>
+
+<br>
+<br>
+<div>
+    NG SwITCHE
+</div>
+<div [ngSwitch]="valorSwitch">
+    <span *ngSwitchCase="'valor1'">Valor 1</span>
+    <span *ngSwitchCase="'valor2'">Valor 2</span>
+    <span *ngSwitchCase="'valor3'">Valor 3</span>
+</div>
+<br>
+<br>
+<button (click)="valorSwitch='valor1'">Valor 1</button>
+<button (click)="valorSwitch='valor2'">Valor 2</button>
+<button (click)="valorSwitch='valor3'">Valor 3</button>
+
+<br>
+<div>
+    TEMPLATE STATEMENTS
+</div>
+<br>
+<button (click)="decirHola()">Cleck Me</button>
+
+<br>
+<div>
+    PROPERTY BINDING o Enlace de Doble Sentido
+</div>
+<br>
+<div>
+    <p>
+        <label for="nombre">Nombre: </label>
+        <input id="nombre" [(ngModel)]="nombre" />
+    </p>
+    <p>
+        <label for="apellido">Apellido: </label>
+        <input id="apellido" [(ngModel)]="apellido" />
+    </p>
+    <button (click)="verDatos()">Mostrar</button>
+    <button (click)="cargarDatos()">Cargar</button>
+
+</div>
+
+<br>
+<div>
+    PIPES Documentacion en pagina angular --> PIPE
+</div>
+<div>
+    <br> este PIPE Formatea la hora en un texto mas flexible hoy es : {{hoy | date : 'short'}}
+    <br> pasa a pesos con el Pipe de currency {{25.5 | currency}}
+    <br>
+    <br> Pasar texto a Mayuscula con nuesro Pipe Creado {{'Mi texto Pipe' | misPIPEs : 'Mayus'}}
+</div>
+<br>

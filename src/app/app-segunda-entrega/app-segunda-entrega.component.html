@@ -1,0 +1,43 @@
+<p>Segunda Entrega</p>
+<p>Alumnos de la Escuela Secundaria</p>
+<div class="row">
+
+    <p class="titulo col-9">Alumnos de la Escuela Secundaria</p>
+    <!--Aplicando PIPES-->
+    <p class="hora col-3">Hora Actual: {{hoy | date : 'shortTime'}}
+</div>
+
+<!--Ejecutamos la directiva estructural NG FOR para llamar al arrray que contiene los Alumnos -->
+<div>
+    <ul>
+        <li *ngFor="let nombreAlumno of alumnos" [ngClass]="nombreAlumno ? 'claseAlumnos' : ' '" [style.font-size]="nombreAlumno ? '20px' : ' '">
+            {{nombreAlumno.nombre}}
+        </li>
+    </ul>
+</div>
+
+<div>
+    <!--Aplicando TEMPLATE STATEMENTS-->
+    La cantidad de Alumnos registrados es: {{conteoArrayAlumnos()}}
+    <br>
+    <button class="boton" (click)="conteoArrayAlumnos1()">Cantidad de Alumnos</button>
+    <br>
+    <p>NOTAintente que al hacer clik en elboton cargala la cantidad en el html pqeo no lo logre</p>
+
+</div>
+
+<div>
+    <!-- aplicando PROPERTY BINDING-->
+    <label for="nombre">Nombre: </label>
+    <input id="alumno" [(ngModel)]="nombreAlumno" />
+    <br>
+
+    <button (click)="cargarAlumno()">cargar Alumno</button>
+
+</div>
+<div>
+    <button (click)="buscarAlumnos()">Buscar Alumno</button>
+    <p>NOTA: la busqueda de alumno esta por consol.log
+        <br> por alguna razon al dar click en buscar me modifica el arreglo y no le estoy pidiendo eso ????
+    </p>
+</div>
