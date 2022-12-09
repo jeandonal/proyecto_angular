@@ -1,0 +1,18 @@
+<small class="text-danger">
+    <!--Se crea una variable para que capture el control creado en  ayuda-a-errores.ts-->
+    <div *ngFor="let error of control?.errors | keyvalue">
+        <!--imprime la captura de la variable error con el valor qeu almacena keyvalue
+        Keyvalue viene incorporado en angular-->
+        <!--{{error.key}}-->
+        <!--{{error.value | json}}-->
+
+        <!--Utilizar directiva [ngSwitch] para asignar el error dependiendo del valor-->
+        <div [ngSwitch]="error.key">
+            <div *ngSwitchCase="'required'">*Campo obligatorio</div>
+            <div *ngSwitchCase="'minlength'">*Debe contener minimo {{error.value.requiredLength}} caracteres</div>
+            <div *ngSwitchCase="'email'">*Debe ser un correo valido</div>
+            <div *ngSwitchCase="'pattern'">*Deben ser valores numericos</div>
+            <div *ngSwitchDefault=""></div>
+        </div>
+    </div>
+</small>

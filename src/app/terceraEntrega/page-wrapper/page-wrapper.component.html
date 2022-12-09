@@ -1,0 +1,92 @@
+<div class="page-wrapper">
+    <app-topbar></app-topbar>
+    <div class="container p-3 d-flex justify-content-center">
+        <div class="card col-10">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Formulario Tercera entrega</h5>
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <!--Se linquea el formulario con [FormGroup]-->
+                        <form [formGroup]="formularioTerceraEntrega" class="row g-3" (ngSubmit)="enviarFormulario()">
+                            <div class="col-12">
+                                <label class="form-label" for="nombre">Nombre</label>
+                                <!--Se linquea el input con el control nombre-->
+                                <input [formControl]="controlNombre" class="form-control" type="text">
+                                <!--
+                                imprime los errores en formato json
+                                {{controlNombre.errors | json}}
+                                -->
+                                <!--Trae el componente ayuda-a-errores para visualizaqr si hay errores
+                                de validacion en el campo-->
+                                <app-ayuda-a-errores [control]="controlNombre"></app-ayuda-a-errores>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="apellido">Apellido</label>
+                                <!--Se linquea el input con el control apellido-->
+                                <input [formControl]="controlApellido" class="form-control" type="text">
+                                <!--Trae el componente ayuda-a-errores para visualizaqr si hay errores
+                                de validacion en el campo-->
+                                <app-ayuda-a-errores [control]="controlApellido"></app-ayuda-a-errores>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="emai">Email</label>
+                                <!--Se linquea el input con el control apellido-->
+                                <input [formControl]="controlEmail" class="form-control" type="text">
+                                <!--Trae el componente ayuda-a-errores para visualizaqr si hay errores
+                                de validacion en el campo-->
+                                <app-ayuda-a-errores [control]="controlEmail"></app-ayuda-a-errores>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="telefono">Telefono</label>
+                                <!--Se linquea el input con el control apellido-->
+                                <input [formControl]="controlTelefono" class="form-control" type="text">
+                                <!--Trae el componente ayuda-a-errores para visualizaqr si hay errores
+                                de validacion en el campo-->
+                                <app-ayuda-a-errores [control]="controlTelefono"></app-ayuda-a-errores>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="contrasena">Contraseña</label>
+                                <!--Se linquea el input con el control apellido-->
+                                <input [formControl]="controlContrasena" class="form-control" type="password">
+                                <!--Trae el componente ayuda-a-errores para visualizaqr si hay errores
+                                de validacion en el campo-->
+                                <app-ayuda-a-errores [control]="controlContrasena"></app-ayuda-a-errores>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="confirContrasena">confirmar Contraseña</label>
+                                <!--Se linquea el input con el control apellido-->
+                                <input [formControl]="controlConfirmContrasena" class=" form-control " type="password">
+                                <!--Trae el componente ayuda-a-errores para visualizaqr si hay errores
+                                de validacion en el campo-->
+                                <app-ayuda-a-errores [control]="controlConfirmContrasena"></app-ayuda-a-errores>
+                            </div>
+
+                            <div class="row d-flex justify-content-center p-3">
+                                <div class="form-check">
+                                    <input [formControl]="controlTerminosCondiciones" class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                    Al dar clic en el checkbox declara que acepta los terminos y condiciones
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center pt-5">
+                                <button [disabled]="formularioTerceraEntrega.invalid" class="btn btn-primary" type="submit">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--Probar qeu los controles esten enlazados-->
+                    <!--
+                    <div class="col-4 ">
+                        <h3>Valido {{formularioTerceraEntrega.valid}}</h3>
+                        <pre>
+                            {{formularioTerceraEntrega.value | json}}
+                        </pre>
+                    
+                    </div>
+                -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
